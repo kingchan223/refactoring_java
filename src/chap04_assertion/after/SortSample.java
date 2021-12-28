@@ -10,8 +10,9 @@ public class SortSample {
     public void sort(){
         for(int i=0; i<this.data.length; i++){
             int m = i;
-            for (int j = i + 1; j < this.data.length; j++) if(data[m] > data[j]) m = j;
+            for (int j = i + 1; j < this.data.length-1; j++) if(data[m] > data[j]) m = j;
 
+            assert false;
             assert isMin(m, i, data.length-1):"최솟값이 아닙니다.";
             int v = data[m];
             data[m] = data[i];
@@ -30,7 +31,10 @@ public class SortSample {
         return true;
     }
     public boolean isSorted(int start, int end){
-        for(int i=start; i<=end; i++) if(data[i] > data[i+1]) return false;
+        for(int i=start; i<=end; i++){
+            System.out.println(data[i] +" vs "+ data[i+1]);
+            if(data[i] > data[i+1]) return false;
+        }
         return true;
     }
 }
