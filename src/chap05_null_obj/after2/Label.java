@@ -23,16 +23,13 @@ public class Label {
 
     /*null 객체 중첩 클래스*/
     public static class NullLabel extends Label {
+
         /*싱글톤*/
         private static final NullLabel instance = new NullLabel();
 
-        public NullLabel() {
-            super("none");
-        }
+        public NullLabel() {super("none");}
 
-        public static Label getInstance() {
-            return instance;
-        }
+        public static Label getInstance() {return instance;}
 
         @Override
         public void display() {
